@@ -1,39 +1,46 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+An extension for `dart_seq` that provides a local database for log events using Hive.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Provides an implementation of `SeqCache` from `dart_seq`
+- Stores events on disk until `flush` is called on the logger
+- Preserves events between sessions (useful for troubleshooting)
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Install both `dart_seq` and `dart_seq_hive_cache`:
+
+```shell
+dart pub add dart_seq dart_seq_hive_cache
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+final cache = await SeqHiveCache.create();
+
+final logger = SeqLogger.http(
+  host: "http://localhost:5341",
+  cache: cache,
+);
+
+await logger.log(SeqLogLevel.information, "before loop");
+
+for (var i = 0; i < 10; i++) {
+  await logger.log(SeqLogLevel.information, i.toString());
+
+  print('events in cache: ${cache.count}');
+
+  await Future.delayed(const Duration(seconds: 1));
+}
+
+await logger.log(SeqLogLevel.information, "after loop");
+
+await logger.flush();
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Please open issues on GitHub if you want to request a feature or report a bug.
+
+Pull requests are welcome!

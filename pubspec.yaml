@@ -1,5 +1,5 @@
 name: dart_seq_hive_cache
-description: An extension for dart_seq that provides a local database for log events using Hive
+description: An extension for `dart_seq` that provides a local database for log events using Hive
 version: 0.0.1
 homepage: https://github.com/ricardoboss/dart_seq_hive_cache
 
