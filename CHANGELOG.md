@@ -1,3 +1,4 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Initial release 🎉
+* Supports creating an `SeqHiveCache` for use in an `SeqLogger`
