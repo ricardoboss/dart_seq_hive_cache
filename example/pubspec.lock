@@ -34,13 +34,14 @@ packages:
     source: hosted
     version: "3.0.3"
   dart_seq:
-    dependency: "direct main"
+    dependency: transitive
     description:
-      name: dart_seq
-      sha256: "15e8965467eb0f9d7418066168e7b8af56d072406549c6dbf08a9742c2ccf57d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.1"
+      path: "."
+      ref: main
+      resolved-ref: "6895ef616d263f5cdfd5f64124ac76c13a09a71b"
+      url: "https://github.com/ricardoboss/dart_seq"
+    source: git
+    version: "0.0.3"
   dart_seq_hive_cache:
     dependency: "direct main"
     description:
