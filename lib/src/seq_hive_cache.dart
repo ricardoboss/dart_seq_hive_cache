@@ -4,9 +4,13 @@ import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
 class SeqHiveCache implements SeqCache {
-  static Future<SeqHiveCache> create([String boxName = 'seq_cache']) async {
+  static Future<SeqHiveCache> create([
+    String hiveName = 'seq_hive_cache',
+    String boxName = 'seq_cache',
+  ]) async {
     final tempDir = await getTemporaryDirectory();
-    Hive.init('${tempDir.path}/seq_hive_cache');
+    Hive.init('${tempDir.path}/$hiveName');
+
     Hive.registerAdapter(SeqEventTypeAdapter());
 
     final box = await Hive.openBox<SeqEvent>(boxName);
