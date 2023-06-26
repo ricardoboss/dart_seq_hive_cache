@@ -1,14 +1,15 @@
+import 'dart:io';
+
 import 'package:dart_seq/dart_seq.dart';
 import 'package:dart_seq_hive_cache/src/seq_event_type_adapter.dart';
 import 'package:hive/hive.dart';
-import 'package:path_provider/path_provider.dart';
 
 class SeqHiveCache implements SeqCache {
   static Future<SeqHiveCache> create([
     String hiveName = 'seq_hive_cache',
     String boxName = 'seq_cache',
   ]) async {
-    final tempDir = await getTemporaryDirectory();
+    final tempDir = Directory.systemTemp;
     Hive.init('${tempDir.path}/$hiveName');
 
     Hive.registerAdapter(SeqEventTypeAdapter());
