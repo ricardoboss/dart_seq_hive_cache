@@ -2,7 +2,7 @@ import 'package:dart_seq/dart_seq.dart';
 import 'package:hive/hive.dart';
 
 class SeqEventTypeAdapter extends TypeAdapter<SeqEvent> {
-  static const int uniqueTypeId = 4444;
+  static const int uniqueTypeId = 99;
 
   @override
   SeqEvent read(BinaryReader reader) {
