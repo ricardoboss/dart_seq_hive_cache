@@ -2,6 +2,8 @@ import 'package:dart_seq/dart_seq.dart';
 import 'package:hive/hive.dart';
 
 class SeqEventTypeAdapter extends TypeAdapter<SeqEvent> {
+  static const int uniqueTypeId = 4444;
+
   @override
   SeqEvent read(BinaryReader reader) {
     final milliseconds = reader.readInt();
@@ -35,7 +37,7 @@ class SeqEventTypeAdapter extends TypeAdapter<SeqEvent> {
   }
 
   @override
-  int get typeId => 0;
+  int get typeId => uniqueTypeId;
 
   @override
   void write(BinaryWriter writer, SeqEvent obj) {
