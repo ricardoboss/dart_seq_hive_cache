@@ -8,15 +8,12 @@ class SeqHiveCache implements SeqCache {
   static Future<SeqHiveCache> create({
     String hiveName = 'seq_hive_cache',
     String boxName = 'seq_cache',
-    bool registerSeqEventTypeAdapter = true,
   }) async {
+    Hive.registerAdapter(SeqEventTypeAdapter(), override: false);
+
     // TODO: implement a platform-agnostic way to initialize Hive
     final tempDir = Directory.systemTemp;
     Hive.init('${tempDir.path}/$hiveName');
-
-    if (registerSeqEventTypeAdapter) {
-      Hive.registerAdapter(SeqEventTypeAdapter());
-    }
 
     final box = await Hive.openBox<SeqEvent>(boxName);
 
@@ -34,13 +31,21 @@ class SeqHiveCache implements SeqCache {
   Future<void> record(SeqEvent event) async => await _box.add(event);
 
   @override
-  Stream<SeqEvent> take(int count) async* {
-    for (var i = 0; i < count && _box.isNotEmpty; i++) {
+  Stream<SeqEvent> peek(int count) async* {
+    final max = count.clamp(0, _box.length);
+    for (var i = 0; i < max; i++) {
       final event = _box.getAt(0);
       if (event == null) break;
 
       yield event;
+    }
+  }
 
+  @override
+  Future<void> remove(int count) async {
+    final max = count.clamp(0, _box.length);
+
+    for (var i = 0; i < max; i++) {
       await _box.deleteAt(0);
     }
   }

@@ -29,17 +29,17 @@ packages:
     dependency: "direct main"
     description:
       name: dart_seq
-      sha256: "17d9c84b96c7b003034d6b86815c028924a28cc8ccddb075318905e5ddd8c581"
+      sha256: "07d3d4b9caec0a897229e2d1755e6a5c94561e6042be7ada30a53ceb17962a93"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4"
+    version: "0.1.0"
   dart_seq_hive_cache:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.4"
   hive:
     dependency: transitive
     description:
