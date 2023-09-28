@@ -33,8 +33,9 @@ class SeqHiveCache implements SeqCache {
   @override
   Stream<SeqEvent> peek(int count) async* {
     final max = count.clamp(0, _box.length);
+
     for (var i = 0; i < max; i++) {
-      final event = _box.getAt(0);
+      final event = _box.getAt(i);
       if (event == null) break;
 
       yield event;
