@@ -1,3 +1,7 @@
+## 0.0.6
+
+* Fix invalid implementation of `peek` where only the first entry is returned multiple times
+
 ## 0.0.5
 
 * Updated to dart_seq 0.1.0
