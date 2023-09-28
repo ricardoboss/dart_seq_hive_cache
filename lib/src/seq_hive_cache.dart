@@ -5,14 +5,18 @@ import 'package:dart_seq_hive_cache/src/seq_event_type_adapter.dart';
 import 'package:hive/hive.dart';
 
 class SeqHiveCache implements SeqCache {
-  static Future<SeqHiveCache> create([
+  static Future<SeqHiveCache> create({
     String hiveName = 'seq_hive_cache',
     String boxName = 'seq_cache',
-  ]) async {
+    bool registerSeqEventTypeAdapter = true,
+  }) async {
+    // TODO: implement a platform-agnostic way to initialize Hive
     final tempDir = Directory.systemTemp;
     Hive.init('${tempDir.path}/$hiveName');
 
-    Hive.registerAdapter(SeqEventTypeAdapter());
+    if (registerSeqEventTypeAdapter) {
+      Hive.registerAdapter(SeqEventTypeAdapter());
+    }
 
     final box = await Hive.openBox<SeqEvent>(boxName);
 
