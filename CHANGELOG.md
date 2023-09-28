@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Fix use of invalid type id
+
 ## 0.0.3
 
 * Make unique id publicly and statically accessible
