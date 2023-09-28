@@ -17,8 +17,7 @@ class SeqEventTypeAdapter extends TypeAdapter<SeqEvent> {
     final level = hasLevel ? reader.readString() : null;
 
     final hasException = reader.readBool();
-    final exception =
-        hasException ? Error.safeToString(reader.readString()) : null;
+    final exception = hasException ? reader.readString() : null;
 
     final hasId = reader.readBool();
     final id = hasId ? reader.readInt() : null;
