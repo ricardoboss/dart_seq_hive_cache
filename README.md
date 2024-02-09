@@ -1,4 +1,4 @@
-An extension for `dart_seq` that provides a local database for log events using Hive.
+An extension for [`dart_seq`](https://pub.dev/packages/dart_seq) that provides a local database for log events using Hive.
 
 ## Features
 
