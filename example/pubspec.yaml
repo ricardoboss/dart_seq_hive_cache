@@ -10,4 +10,4 @@ environment:
 dependencies:
   dart_seq_hive_cache:
     path: ../
-  dart_seq: ^0.1.0
+  dart_seq: ^1.0.0

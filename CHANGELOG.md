@@ -1,10 +1,16 @@
+## 1.0.0-pre.1
+
+* Changed SDK constraint to `^3.0.0`
+* Updated `dart_seq` to 1.0.0
+* Added GitHub Actions workflows
+
 ## 0.0.6
 
 * Fix invalid implementation of `peek` where only the first entry is returned multiple times
 
 ## 0.0.5
 
-* Updated to dart_seq 0.1.0
+* Updated to `dart_seq` 0.1.0
 * Removed `registerSeqEventTypeAdapter` from `SeqHiveCache.create` factory
     * If you still want to override the default `SeqEventTypeAdapter` you can do so by
       calling `Hive.registerAdapter(MySeqEventTypeAdapter(), override: true)` after
@@ -19,7 +25,7 @@
 * Make unique id publicly and statically accessible
 * Added ability to disable registering the default SeqEvent type adapter
 * Simplify reading back exceptions
-* Updated to dart_seq 0.0.4
+* Updated to `dart_seq` 0.0.4
 
 ## 0.0.2
 

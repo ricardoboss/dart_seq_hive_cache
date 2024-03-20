@@ -1,11 +1,11 @@
 name: dart_seq_hive_cache
 description: An extension for `dart_seq` that provides a local database for log events using Hive
-version: 0.0.6
+version: 1.0.0-pre.1
 homepage: https://github.com/ricardoboss/dart_seq_hive_cache
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: ^3.0.0
 
 dependencies:
-  dart_seq: ^0.1.0
+  dart_seq: ^1.0.0
   hive: ^2.2.3
