@@ -1,3 +1,9 @@
+![GitHub License](https://img.shields.io/github/license/ricardoboss/dart_seq_hive_cache)
+![Pub Version](https://img.shields.io/pub/v/dart_seq_hive_cache)
+![Pub Points](https://img.shields.io/pub/points/dart_seq_hive_cache)
+![Pub Likes](https://img.shields.io/pub/likes/dart_seq_hive_cache)
+![Pub Popularity](https://img.shields.io/pub/popularity/dart_seq_hive_cache)
+
 An extension for [`dart_seq`](https://pub.dev/packages/dart_seq) that provides a local database for log events using Hive.
 
 ## Features
