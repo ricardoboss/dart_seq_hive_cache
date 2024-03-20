@@ -3,6 +3,9 @@ description: An extension for `dart_seq` that provides a local database for log 
 version: 1.0.0-pre.1
 homepage: https://github.com/ricardoboss/dart_seq_hive_cache
 
+screenshots:
+  - './doc/Screenshot 2024-03-20 050912.png'
+
 environment:
   sdk: ^3.0.0
 

@@ -45,6 +45,8 @@ await logger.log(SeqLogLevel.information, "after loop");
 await logger.flush();
 ```
 
+![Screenshot from Seq showing the result of the above code](./docs/Screenshot%202024-03-20%20050912.png)
+
 ## Additional information
 
 Please open issues on GitHub if you want to request a feature or report a bug.
