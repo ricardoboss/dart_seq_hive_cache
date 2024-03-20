@@ -45,7 +45,7 @@ await logger.log(SeqLogLevel.information, "after loop");
 await logger.flush();
 ```
 
-![Screenshot from Seq showing the result of the above code](./docs/Screenshot%202024-03-20%20050912.png)
+![Screenshot from Seq showing the result of the above code](https://raw.githubusercontent.com/ricardoboss/dart_seq_hive_cache/44af7da53b1a871a5150f521b83b7e3512b3deec/docs/Screenshot%202024-03-20%20050912.png)
 
 ## Additional information
 
