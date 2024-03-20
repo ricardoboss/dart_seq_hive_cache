@@ -32,8 +32,16 @@ class SeqEventTypeAdapter extends TypeAdapter<SeqEvent> {
     final context =
         hasContext ? reader.readMap().cast<String, dynamic>() : null;
 
-    return SeqEvent(timestamp, message, messageTemplate, level, exception, id,
-        renderings, context);
+    return SeqEvent(
+      timestamp,
+      message,
+      messageTemplate,
+      level,
+      exception,
+      id,
+      renderings,
+      context,
+    );
   }
 
   @override
