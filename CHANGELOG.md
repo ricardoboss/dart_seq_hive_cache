@@ -1,3 +1,7 @@
+## Unreleased
+
+* Updated `dart_seq` to 2.0.0
+
 ## 1.0.0-pre.1
 
 * Changed SDK constraint to `^3.0.0`
