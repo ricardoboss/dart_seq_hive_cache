@@ -11,7 +11,7 @@ class SeqHiveCache implements SeqCache {
     String hiveName = 'seq_hive_cache',
     String boxName = 'seq_cache',
   }) async {
-    Hive.registerAdapter(SeqEventTypeAdapter(), override: false);
+    Hive.registerAdapter(SeqEventTypeAdapter());
 
     // TODO(ricardoboss): implement a platform-agnostic way to initialize Hive
     final tempDir = Directory.systemTemp;
