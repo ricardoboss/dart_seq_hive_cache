@@ -10,7 +10,7 @@ environment:
   sdk: ^3.0.0
 
 dependencies:
-  dart_seq: ^1.0.0
+  dart_seq: ">=1.0.0 <3.0.0"
   hive: ^2.2.3
 
 dev_dependencies:
