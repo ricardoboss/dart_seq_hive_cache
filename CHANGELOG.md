@@ -1,5 +1,8 @@
 ## Unreleased
 
+## 1.0.0
+
+* First stable release 🎉
 * Updated `dart_seq` to 2.0.0
 
 ## 1.0.0-pre.1
